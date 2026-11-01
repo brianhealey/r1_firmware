@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Local manifest for the rabbit r1 bring-up.
+
+  Base: AOSP android-13.0.0_r84 (Android 13, the latest r84 release tag).
+  Pin it with:
+
+      repo init -u https://android.googlesource.com/platform/manifest \
+                 -b android-13.0.0_r84
+      mkdir -p .repo/local_manifests
+      cp local_manifests/r1.xml .repo/local_manifests/r1.xml
+      repo sync -c -j$(nproc)
+
+  Rationale for Android 13 / r84: the r1 ships Android 13 and the MT6765
+  (Helio P35) SoC's realistic from-scratch ceiling is Android 13 (4.19
+  kernel). See docs/android-base.md.
+
+  The device and vendor trees below currently live in the r1_firmware repo
+  (device/rabbit/r1 and vendor/rabbit/r1). Before wiring them into repo they
+  must be split into dedicated repositories (device_rabbit_r1,
+  vendor_rabbit_r1), because repo cannot check out a subdirectory of a repo.
+  Until then, copy the trees into the AOSP checkout manually:
+
+      cp -r <r1_firmware>/device/rabbit/r1 device/rabbit/r1
+      cp -r <r1_firmware>/vendor/rabbit/r1 vendor/rabbit/r1
+-->
+<manifest>
+  <remote name="github" fetch="https://github.com/" />
+
+  <!-- Device tree (this repo). Split into brianhealey/device_rabbit_r1
+       before enabling. -->
+  <!--
+  <project path="device/rabbit/r1"
+           name="brianhealey/device_rabbit_r1"
+           remote="github"
+           revision="main" />
+  -->
+
+  <!-- Vendor tree (this repo). Split into brianhealey/vendor_rabbit_r1
+       before enabling. -->
+  <!--
+  <project path="vendor/rabbit/r1"
+           name="brianhealey/vendor_rabbit_r1"
+           remote="github"
+           revision="main" />
+  -->
+
+  <!-- MediaTek MT6765 kernel (GPL). TBD: exact upstream source. Reference
+       candidates: MediaTek's published MT6765 kernel source, or a LineageOS
+       20 MT6765 kernel tree. Enabled during W3 (kernel bring-up). -->
+  <!--
+  <project path="kernel/mediatek/mt6765"
+           name="TBD/mt6765-kernel"
+           remote="github"
+           revision="TBD" />
+  -->
+</manifest>

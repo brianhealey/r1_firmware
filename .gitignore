@@ -33,3 +33,6 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Extracted vendor blobs (produced on the build host, never committed)
+vendor/rabbit/r1/proprietary/

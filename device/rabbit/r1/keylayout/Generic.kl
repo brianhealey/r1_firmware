@@ -1,0 +1,31 @@
+# Copyright (C) 2026 The r1_firmware Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Key layout for the rabbit r1's physical controls.
+#
+# The r1 has a push-to-talk button and a scroll wheel (rotary encoder) in
+# addition to the touchscreen. The exact keycodes are TBD until the device
+# is probed (`adb shell getevent`). This file is a placeholder; the r1-specific
+# mapping will replace it during bring-up.
+#
+# Standard navigation/select keys used by the scroll wheel:
+key 103   DPAD_UP
+key 108   DPAD_DOWN
+key 105   DPAD_LEFT
+key 106   DPAD_RIGHT
+key 232   DPAD_CENTER
+key 28    ENTER
+
+# Push-to-talk (TBD — likely a custom keycode from the r1 keypad driver):
+# key ???  VOICE_ASSIST

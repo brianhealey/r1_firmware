@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2026 The r1_firmware Authors
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<!--
+  Framework overlay for the rabbit r1's small (~2.88") portrait screen.
+
+  Values are PLACEHOLDERS pending measurement of the real display
+  (resolution and density via `adb shell wm size` / `wm density`).
+  See docs/hardware.md and PLAN.md §7.
+-->
+<resources>
+    <!-- Portrait, single-column: no multi-window or desktop-style UI. -->
+    <bool name="config_supportsMultiWindow">false</bool>
+
+    <!-- Large touch targets on a small screen. -->
+    <dimen name="config_minScalingSpan">320dp</dimen>
+
+    <!-- Disable the navigation bar; the r1 has hardware controls. -->
+    <bool name="config_showNavigationBar">false</bool>
+</resources>
