@@ -78,6 +78,22 @@ listed per workstream.
   path.
 - **Dependencies:** W2–W4 outputs. **Status:** not started.
 
+## 3.5 Phase 2 progress (2026-11-01 UTC)
+
+- **Build host provisioned:** Ubuntu 22.04 VM `r1-aosp-build` (VMID 10500) on
+  `bigpc` — 12 vCPU / 32 GB RAM, 40 GB OS disk on `fast-nvr` (NVMe), 400 GB
+  data disk on `nvr-bulk` (HDD) at `/aosp`. Details:
+  [`docs/phase2-build-host.md`](docs/phase2-build-host.md).
+- **AOSP source sync in progress:** `repo init` pinned to
+  `android-13.0.0_r84`; `repo sync -c -j8` running in the background. Not yet
+  complete.
+- **Device tree skeleton committed:** `device/rabbit/r1` (product, board
+  config, keylayout, overlay, blob inventory), `vendor/rabbit/r1` placeholder,
+  and `local_manifests/r1.xml`.
+- **Vendor-blob sourcing documented:** LineageOS-style tree for the
+  telephony/IMS subset + full mtkclient extraction procedure (gated on the
+  physical r1). See [`docs/vendor-blobs.md`](docs/vendor-blobs.md).
+
 ## 4. Build host requirements
 
 AOSP builds need a Linux x86_64 host with substantial resources. Recommended

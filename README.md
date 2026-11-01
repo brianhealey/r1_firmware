@@ -12,7 +12,12 @@ device.
 
 - [x] Phase 1 — hardware research, Android base selection, community survey,
       vendor-blob inventory, and roadmap ([`PLAN.md`](PLAN.md)).
-- [ ] Phase 2 — build skeleton (manifest, device tree, kernel).
+- [~] Phase 2 — build skeleton: device tree (`device/rabbit/r1`), vendor
+      placeholder (`vendor/rabbit/r1`), local manifest (AOSP
+      `android-13.0.0_r84`), and a provisioned build VM on `bigpc` with the
+      source sync in progress. See
+      [`docs/phase2-build-host.md`](docs/phase2-build-host.md). Kernel and
+      MediaTek common config still TBD.
 - [ ] Phase 3 — vendor blob extraction and integration.
 - [ ] Phase 4 — small-screen UI/launcher design.
 - [ ] Phase 5 — build, flash, and on-device test.
@@ -37,6 +42,7 @@ Full detail, with sources and open questions: [`docs/hardware.md`](docs/hardware
 - [`docs/android-base.md`](docs/android-base.md) — Android release selection and rationale.
 - [`docs/community-research.md`](docs/community-research.md) — reference-only survey of prior art.
 - [`docs/vendor-blobs.md`](docs/vendor-blobs.md) — every special binary/config, its source, and its justification.
+- [`docs/phase2-build-host.md`](docs/phase2-build-host.md) — the provisioned AOSP build VM and sync state.
 
 ## License
 
