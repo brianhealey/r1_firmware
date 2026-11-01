@@ -43,6 +43,7 @@ Full detail, with sources and open questions: [`docs/hardware.md`](docs/hardware
 - [`docs/community-research.md`](docs/community-research.md) — reference-only survey of prior art.
 - [`docs/vendor-blobs.md`](docs/vendor-blobs.md) — every special binary/config, its source, and its justification.
 - [`docs/phase2-build-host.md`](docs/phase2-build-host.md) — the provisioned AOSP build VM and sync state.
+- [`docs/mtkclient-setup.md`](docs/mtkclient-setup.md) — mtkclient install (macOS) and the r1 vendor-extraction procedure (documented, not yet executed).
 
 ## License
 

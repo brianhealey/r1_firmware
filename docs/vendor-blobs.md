@@ -111,15 +111,17 @@ cd mtkclient
 pip3 install -r requirements.txt
 ```
 
-### Step 2 — Enter BROM/preloader mode
+### Step 2 — Enter preloader/BROM mode
 
-Power the r1 **off**, hold the correct key combination (per the r1_escape
-flow: typically the push-to-talk button while connecting USB), and connect the
-USB cable. `mtkclient` should detect the device:
-
-```sh
-python3 mtk r bootrom   # or: python3 mtk r preloader
-```
+The r1 has **no volume buttons** (a single push-to-talk button + scroll wheel),
+so the `r1_escape` flow does **not** use a button combo: power the r1 **fully
+off** and connect the USB cable. The MediaTek preloader then enumerates as
+`0e8d:2000` (PreLoader USB VCOM), and `mtkclient` performs the preloader
+handshake directly — the r1's preloader is not patched, so no BROM exploit is
+needed. (The exact r1-specific BROM/bootrom button sequence is not documented
+in the community sources reviewed; it is only needed if the preloader is
+corrupted.) See [`docs/mtkclient-setup.md`](mtkclient-setup.md) for the
+verified macOS install and the exact commands.
 
 Confirm detection with `lsusb` (a MediaTek `0e8d:2000` preloader or
 `0e8d:0003` bootrom device appears).
